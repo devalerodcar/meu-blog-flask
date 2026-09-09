@@ -74,6 +74,22 @@ def delete(id):
     db.session.commit()
     flash('"{}" foi apagado com sucesso!'.format(post.title))
     return redirect(url_for('index'))
+@app.route('/register', methods=('GET', 'POST'))
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        hashed_password = generate_password_hash(password, method='scrypt')
+
+        new_user = User(username=username, password=hashed_password)
+        db.session.add(new_user)
+        db.session.commit()
+        flash('Conta criada com sucesso! Faça o login.')
+        return redirect(url_for('login'))
+
+    return render_template('register.html')
+
 
 
 
