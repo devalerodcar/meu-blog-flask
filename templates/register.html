@@ -8,12 +8,14 @@
         <form method="post">
             <div class="form-group">
                 <label for="username">Nome de Usuário</label>
-                <input type="text" name="username" placeholder="Escolha um usuário" class="form-control" required>
+                <!-- Preste atenção no name="username" abaixo -->
+                <input type="text" id="username" name="username" placeholder="Escolha um usuário" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label for="password">Senha</label>
-                <input type="password" name="password" placeholder="Digite uma senha forte" class="form-control" required>
+                <!-- Preste atenção no name="password" abaixo -->
+                <input type="password" id="password" name="password" placeholder="Digite uma senha forte" class="form-control" required>
             </div>
 
             <button type="submit" class="btn btn-success btn-block">Registrar</button>
